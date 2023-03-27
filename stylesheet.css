@@ -1,0 +1,20 @@
+:root {
+    --color-green:  #31c48d;
+    --color-white: #cfcfd3;;
+    --color-dark-grey: #33333d;
+    --color-medium-grey: #424250;
+    --color-light-grey: #d2d6dc;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} 
+
+body {
+    background: var(--color-medium-grey);
+    color: var(--color-white);
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
