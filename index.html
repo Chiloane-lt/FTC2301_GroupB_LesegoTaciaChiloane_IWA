@@ -18,24 +18,24 @@
     <title>Tally Count</title>
 </head>
 <body>
-     <header>
+     <header class="header">
         <div>Logo</div>
-        <h1>
+        <h1 class="header__title">
             Tally Counter
         </h1>
      </header>
-     <div>
+     <div class="counter__display">
         <label>
-            <span>Display</span>
                 <select>
+                    <option>Display</option>
                     <option>Single</option>
                     <option>Multiple</option>
                 </select>
         </label>
 
         <label>
-            <span>Counter</span>
             <select>
+                <option>Counters</option>
                 <option>Counter 1</option>
                 <option>Counter 2</option>
                 <option>Counter 3</option>                    
@@ -45,7 +45,15 @@
         <button>Settings</button>
 
      </div>
-     <div></div>
-     <footer></footer>
+     <main class="counter">
+        <input class="counter__number" readonly value="10">
+        <div class="counter__actions">
+            <button class="counter__buton">-</button>
+            <button class="counter__buton">+</button>
+        </div>
+     </main>
+     <footer class="footer">
+        Inspired by <a href="https://tallycount.app/" class="footer_link"> Tally Count</a>. This is a student practice project.
+     </footer>
 </body>
 </html>
