@@ -13,9 +13,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&family=Josefin+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:wght@300;700&family=Roboto:wght@500;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/IWA1/stylesheets/stylesheet.css">
 
-    <script src="/scripts.js"></script>
+    <script src="/IWA1/scripts/scripts.js" defer></script>
 
     <title>Tally Count</title>
 </head>
@@ -48,14 +48,14 @@
 
      </div>
      <main class="counter">
-        <input class="counter__number" readonly value="0">
+        <input data-key="number" class="counter__number" readonly value="0">
         <div class="counter__actions">
-            <button class="counter__buton">-</button>
-            <button class="counter__buton">+</button>
+            <button class="counter__button" data-key="subtract">-</button>
+            <button class="counter__button" data-key="add">+</button>
         </div>
      </main>
      <footer class="footer">
-        Inspired by <a href="https://tallycount.app/" class="footer_link" target="_blank"> Tally Count</a>. This is a student practice project.
+        Inspired by <a href="https://tallycount.app/" class="footer_link" target="_blank"> Tally Count</a>. This is a practice project.
      </footer>
 </body>
 </html>

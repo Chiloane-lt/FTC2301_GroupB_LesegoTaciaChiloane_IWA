@@ -51,12 +51,16 @@ body {
     display: flex;
 }
 
-.counter__buton {
+.counter__button {
     width: 50%;
     height: 6rem;
     background: none;
     text-align: center;
     color: var(--color-white);
+}
+
+.counter__button:disabled {
+    opacity: 0.2;
 }
 
 /*  Footer */
