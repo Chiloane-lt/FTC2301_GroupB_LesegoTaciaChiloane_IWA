@@ -1,46 +1,49 @@
-// Add assignment operator to declarations
-const date = 2050;
-const status = 'student';
+const FREE_WARNING = "Free shipping only applies to single customer orders";
+const BANNED_WARNING = "Unfortunately we do not ship to your country of residence";
+const NONE_SELECTED = "0";
 
-// Made count not a constant variable
-let count = 0;
+// Set customer details initially since these are going to be used later in the script
+let customers = 1;
+let customerLocation = 'RSA';
+let currency = null;
+let shipping = 0;
 
-// Replace assignment operator with comparison operator
-if (date === 2050) {
-	console.log("January", 'New Year’s Day');
-	console.log("March", 'Human Rights Day');
-
-    // Removed April as a date variable to maintain consistency across logs
-	console.log('April', 'Family Day'); 
-	console.log('April', 'Freedom Day');
-
-
-	// Remove re-declaration of count
-    count += 4;
-
-	// Replace assignment operator with comparison operator
-    if (status === "student") {
-	  console.log('June', 'Youth Day');
-      count += 1;
-  };
-
-	console.log('August', 'Women’s Day');
-	console.log('September', 'Heritage Day');
-
-    // Removed December as a date variable to maintain consistency across logs
-	console.log('December', 'Day of Reconciliation');
-
-	count += 3;
-
-	if (status === "parent") {
-	  console.log('December', 'Christmas Day');
-		count += 1;
-  };
-
-	console.log('December', 'Day of Goodwill');
-	count += 1;
+if (customerLocation === 'RSA') {
+  shipping = 400;
+  currency = "R";
+} else if (customerLocation === 'NAM') {
+  shipping = 600;
+  currency = "$";
+} else {
+  shipping = 800;
+  currency = "$";
 }
 
-console.log('Your status is: ', status);
-console.log('The year is: ', date);
-console.log('The total holidays is: ', count);
+const shoes = 300 * 1;
+const toys = 100 * 5;
+const shirts = 150 * NONE_SELECTED;
+const batteries = 35 * 2;
+const pens = 5 * NONE_SELECTED;
+const totalNoShip = shoes + toys + shirts + batteries + pens;
+
+// shipping = null
+// currency = $
+
+if (customers === 1 && (customerLocation === 'NAM' || customerLocation === 'RSA')) {
+  if (shoes + toys + batteries + pens + shirts >= 1000) {
+    if (customerLocation === 'NAM' && totalNoShip >= 60) {
+      shipping = 0;
+    }
+    if (customerLocation === 'RSA' && totalNoShip >= 1000) {
+      shipping = 0;
+    }
+  }
+} else {
+  console.log(FREE_WARNING);
+}
+
+if (customerLocation === 'NK') {
+  console.log(BANNED_WARNING);
+} else {
+  console.log("price: ", currency, totalNoShip + shipping);
+}
