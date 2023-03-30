@@ -6,7 +6,7 @@ const status = 'student';
 let count = 0;
 
 // Replace assignment operator with comparison operator
-if (date == 2050) {
+if (date === 2050) {
 	console.log("January", 'New Year’s Day');
 	console.log("March", 'Human Rights Day');
 
@@ -19,7 +19,7 @@ if (date == 2050) {
     count += 4;
 
 	// Replace assignment operator with comparison operator
-    if (status == "student") {
+    if (status === "student") {
 	  console.log('June', 'Youth Day');
       count += 1;
   };
@@ -32,7 +32,7 @@ if (date == 2050) {
 
 	count += 3;
 
-	if (status == "parent") {
+	if (status === "parent") {
 	  console.log('December', 'Christmas Day');
 		count += 1;
   };
