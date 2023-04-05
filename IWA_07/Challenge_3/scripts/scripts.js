@@ -14,10 +14,6 @@ const owed = `R ${((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toFixed
 const leo = `${leoName} ${leoSurname} (Owed: R ${((leoBalance * -1).toFixed(2))})`;
 const sarah = `${sarahName} ${sarahSurname} (Owed: R ${((sarahBalance * -1).toFixed(2))})`;
 const total = "Total amount owed: ";
-const result = `${leo}
-${sarah}\n\n
-${divider}
-${total}${owed}
-${divider}`;
+const result = `${leo}\n${sarah}\n\n${divider}\n${total}${owed}\n${divider}`;
 
 console.log(result);
