@@ -10,7 +10,7 @@ const divider = '----------------------------------';
 
 // Only change below this line
 
-const calc = parseInt(((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toFixed(2));
+const calc = parseFloat(((parseFloat(leoBalance) + parseFloat(sarahBalance)) * -1).toFixed(2));
 const addSeparator = calc.toLocaleString("fi-FI", { minimumFractionDigits: 2});
 
 // toLocaleString only works on numbers not strings. Therefore I separated the calculation to maintain the final amount as a number BEFORE passing to to toLocaleString
