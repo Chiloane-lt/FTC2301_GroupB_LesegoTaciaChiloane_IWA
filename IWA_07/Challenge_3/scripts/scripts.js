@@ -10,11 +10,16 @@ const divider = '----------------------------------';
 
 // Only change below this line
 
-const owed = `R ${(((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toLocaleString()).toFixed(2)}`;
+const calc = parseInt(((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toFixed(2));
+const addSeparator = calc.toLocaleString("fi-FI", { minimumFractionDigits: 2});
+
+// toLocaleString only works on numbers not strings. Therefore I separated the calculation to maintain the final amount as a number BEFORE passing to to toLocaleString
+
+
+const owed = `R ${addSeparator}`;
 const leo = `${leoName} ${leoSurname.trimEnd()} (Owed: R ${((leoBalance * -1).toFixed(2))})`;
 const sarah = `${sarahName.trimEnd()} ${sarahSurname} (Owed: R ${((sarahBalance * -1).toFixed(2))})`;
 const total = "Total amount owed: ";
-const result = `${leo}\n${sarah}\n\n${divider}\n${total}${owed}\n${divider}`;
+const result = `${leo}\n${sarah}\n\n${divider}\n  ${total}${owed}\n${divider}`;
 
 console.log(result);
-
