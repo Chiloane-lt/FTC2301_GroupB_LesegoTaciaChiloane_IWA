@@ -10,7 +10,7 @@ const divider = '----------------------------------';
 
 // Only change below this line
 
-const owed = `R ${((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toLocaleString()}`;
+const owed = `R ${((parseInt(leoBalance) + parseInt(sarahBalance)) * -1).toFixed(2)}`;
 const leo = `${leoName} ${leoSurname.trimEnd()} (Owed: R ${((leoBalance * -1).toFixed(2))})`;
 const sarah = `${sarahName.trimEnd()} ${sarahSurname} (Owed: R ${((sarahBalance * -1).toFixed(2))})`;
 const total = "Total amount owed: ";
@@ -18,4 +18,3 @@ const result = `${leo}\n${sarah}\n\n${divider}\n${total}${owed}\n${divider}`;
 
 console.log(result);
 
-toLocaleString
