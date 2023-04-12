@@ -66,23 +66,27 @@ let copied = structuredClone(holidays[christmas]);
  */
 copied.name = 'X-mas Day';
 
-//Set time to midnight
-copied.date.setHours(0);
-copied.date.setMinutes(0);
+
+/**Deep copy of copied.date. Time will be edited to midnight. */
+let correctDate = structuredClone(copied.date); 
+
+correctDate.setHours(0);                //Set hour to midnight
+correctDate.setMinutes(0);              //Set time to 00 minutes
 
 /**
  * Check whether the new date is earlier than the current date.
  */
-let check = copied.date.getTime() < holidays[6].date.getTime();
+let isEarlier = correctDate.getTime() < holidays[6].date.getTime();
 
-console.log(`New date is earlier: ${check}`);
+console.log(`New date is earlier: ${isEarlier}`);
+
+//Apply changes to copied if check is true.
+
+if (isEarlier){
+    copied.date = correctDate;
+};
 
 
-
-
-// isEarlier = copied.date < holidays[6].date
-// console.log('New date is earlier:', isEarlier)
-// if (isEarlier) copied.date = correctDate
 // console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
 // console.log('Name change:', holidays[christmas].name != copied.name || copied.name)
 // console.log('Date change:', holidays[christmas].date != copied.date || copied.date)
