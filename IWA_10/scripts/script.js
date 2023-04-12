@@ -92,6 +92,10 @@ console.log('Name change:', holidays[christmas].name != copied.name && copied.na
 
 console.log('Date change:', holidays[christmas].date != copied.date && `${copied.date.getDate()}/${copied.date.getMonth() + 1}/${copied.date.getFullYear()}`);      //Starts counting from 0, therefore, it's a good idea to add 1 to each return value.
 
+//Complete the changes on the original holidays object.
+holidays[6] = copied;
+
+
 // const firstHolidayTimestamp = Math.min(
 //     holidays[0].date.getTime,
 //     holidays[1].date.getTime,
