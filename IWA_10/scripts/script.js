@@ -86,10 +86,11 @@ if (isEarlier){
     copied.date = correctDate;
 };
 
+console.log('ID change:', holidays[christmas].id != copied.id && copied.id);
 
-// console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
-// console.log('Name change:', holidays[christmas].name != copied.name || copied.name)
-// console.log('Date change:', holidays[christmas].date != copied.date || copied.date)
+console.log('Name change:', holidays[christmas].name != copied.name && copied.name);
+
+console.log('Date change:', holidays[christmas].date != copied.date && `${copied.date.getDate()}/${copied.date.getMonth() + 1}/${copied.date.getFullYear()}`);      //Starts counting from 0, therefore, it's a good idea to add 1 to each return value.
 
 // const firstHolidayTimestamp = Math.min(
 //     holidays[0].date.getTime,
