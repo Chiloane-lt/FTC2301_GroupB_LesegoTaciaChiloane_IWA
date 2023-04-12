@@ -60,13 +60,25 @@ console.log(holidays && holidays[futureId] && holidays[futureId].name || `ID ${f
  */
 let copied = structuredClone(holidays[christmas]);
 
-// copied = { name: 'X-mas Day' };
-// correctDate = copied.date
-// correctDate.hours = 0
-// correctDate.minutes = 0
+
+/**
+ * Change name of christmas holiday to X-mas Day
+ */
+copied.name = 'X-mas Day';
+
+//Set time to midnight
+copied.date.setHours(0);
+copied.date.setMinutes(0);
+
+/**
+ * Check whether the new date is earlier than the current date.
+ */
+let check = copied.date.getTime() < holidays[6].date.getTime();
+
+console.log(`New date is earlier: ${check}`);
 
 
-// Above makes edits to copied.
+
 
 // isEarlier = copied.date < holidays[6].date
 // console.log('New date is earlier:', isEarlier)
