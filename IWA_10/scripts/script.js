@@ -132,5 +132,5 @@ console.log(`${(firstDay.toString()).padStart(2,"0")}/${(firstMonth.toString()).
 
 console.log(`${(lastDay.toString()).padStart(2,"0")}/${(lastMonth.toString()).padStart(2,"0")}/${currentYear}`);
 
-// const randomHoliday = holidays[Math.random]
-// console.log(randomHoliday.date)
+const randomHoliday = holidays[Math.floor(Math.random()*10)];
+console.log(randomHoliday.date)
