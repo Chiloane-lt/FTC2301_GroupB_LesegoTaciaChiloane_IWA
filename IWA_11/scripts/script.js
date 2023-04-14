@@ -5,11 +5,11 @@ const donuts1 = root1.querySelector('.donuts .count');
 const pancakes1 = root1.querySelector('.pancakes .count');
 const status1 = root1.querySelector('.status dd');
 
-// const 2-root = document(order2),
-// const 2-biscuits: document(biscuits),
-// const 2-donuts: document(donuts),
-// const 2-pancakes: document(pancakes),
-// const 2-status: document(status)
+const root2 = document.querySelector('[data-key="order2"]');
+const biscuits2 = root2.querySelector(".biscuits .count");
+const donuts2 = root2.querySelector(".donuts .count");
+const pancakes2 = root2.querySelector(".pancakes .count");
+const status2 =  root2.querySelector(".status dd");
 
 // const 3-root = document(order3),
 // const 3-biscuits: document(biscuits),
@@ -25,10 +25,10 @@ status1.innerHTML = root1.getAttribute('data-delivered') === "true" ? "Delivered
 
 
 
-// 2-biscuits= 2-root.biscuits,
-// 2-donuts = 2-root.donuts,
-// 2-pancakes = 2-root.pancakes,
-// 2-status = 2-root.status ? Delivered : Pending
+biscuits2.innerHTML = root2.getAttribute('data-biscuits');
+donuts2.innerHTML = root2.getAttribute('data-donuts');
+pancakes2.innerHTML = root2.getAttribute('data-pancakes');
+status2.innerHTML = root2.getAttribute('data-delivered') === "true" ? "Delivered" : "Pending";
 
 // 3-biscuits= 3-root.biscuits,
 // 3-donuts = 3-root.donuts,
