@@ -1,4 +1,4 @@
-//Create object named root1.
+//Create object named root1. Select root1's children.
 const root1 = document.querySelector('[data-key="order1"]');
 const biscuits1 = root1.querySelector('.biscuits .count');
 const donuts1 = root1.querySelector('.donuts .count');
@@ -17,13 +17,11 @@ const donuts3 = root3.querySelector(".donuts .count");
 const pancakes3 = root3.querySelector(".pancakes .count");
 const status3 = root3.querySelector(".status dd");
 
+//Assign new values using child references set above. Chech status & log as stated.
 biscuits1.innerHTML = root1.getAttribute('data-biscuits');
 donuts1.innerHTML = root1.getAttribute('data-donuts');
 pancakes1.innerHTML = root1.getAttribute('data-pancakes');
 status1.innerHTML = root1.getAttribute('data-delivered') === "true" ? "Delivered" : "Pending";
-
-
-
 
 biscuits2.innerHTML = root2.getAttribute('data-biscuits');
 donuts2.innerHTML = root2.getAttribute('data-donuts');
