@@ -39,10 +39,11 @@ const reserve1 = book1.querySelector('.reserve');
 const checkout1 = book1.querySelector('.checkout');
 const checkin1 = book1.querySelector('.checkin');
 
-// status = selector(status)
-// reserve = selector(reserve)
-// checkout = selector(checkout)
-// checkin = selector(checkin)
+const book2 = document.querySelector('#book3');
+const status2 = book2.querySelector('.status').innerHTML;
+const reserve2 = book2.querySelector('.reserve');
+const checkout2 = book2.querySelector('.checkout');
+const checkin2 = book2.querySelector('.checkin');
 
 checkin0.style.color = '';
 book0.querySelector('.status').style.color = STATUS_MAP[status0].color;
@@ -57,8 +58,8 @@ STATUS_MAP[status1].canCheckout ? checkout1.setAttribute('enabled', 'enabled') :
 STATUS_MAP[status1].canCheckIn ? checkin1.setAttribute('enabled', 'enabled') : checkin1.setAttribute('disabled', 'disabled');
 
 
-// checkin.2.color = none
-// status.2.style.color = STATUS_MAP.status.color
-// reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-// checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-// checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+checkin2.style.color = '';
+book2.querySelector('.status').style.color = STATUS_MAP[status2].color;
+STATUS_MAP[status2].canReserve ? reserve2.setAttribute('enabled', 'enabled') : reserve2.setAttribute('disabled', 'disabled');
+STATUS_MAP[status2].canCheckout ? checkout2.setAttribute('enabled', 'enabled') : checkout2.setAttribute('disabled', 'disabled');
+STATUS_MAP[status2].canCheckIn ? checkin2.setAttribute('enabled', 'enabled') : checkin2.setAttribute('disabled', 'disabled');
