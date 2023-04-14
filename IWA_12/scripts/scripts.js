@@ -27,11 +27,17 @@ const STATUS_MAP = {
 
 // Edit below line 
 
-const book0 = document.querySelector('#book1');
-const status0 = book0.querySelector('.status').innerHTML;
-const reserve0 = book0.querySelector('.reserve');
-const checkout0 = book0.querySelector('.checkout');
-const checkin0 = book0.querySelector('.checkin');
+//Select main node.
+//Extract status.
+//Select reserve button.
+//Select checkout button.
+//Select checkin button.
+
+const book0 = document.querySelector('#book1');             
+const status0 = book0.querySelector('.status').innerHTML;   
+const reserve0 = book0.querySelector('.reserve');           
+const checkout0 = book0.querySelector('.checkout');         
+const checkin0 = book0.querySelector('.checkin');           
 
 const book1 = document.querySelector('#book2');
 const status1 = book1.querySelector('.status').innerHTML;
@@ -44,6 +50,12 @@ const status2 = book2.querySelector('.status').innerHTML;
 const reserve2 = book2.querySelector('.reserve');
 const checkout2 = book2.querySelector('.checkout');
 const checkin2 = book2.querySelector('.checkin');
+
+//Set checkin button colour to none.
+//Select colour based on status and set it on status text.
+//Create disabled/enabled attribute on reserve button based on status.
+//Create disabled/enabled attribute on checkout button based on status.
+//Create disabled/enabled attribute on checkin button based on status.
 
 checkin0.style.color = '';
 book0.querySelector('.status').style.color = STATUS_MAP[status0].color;
