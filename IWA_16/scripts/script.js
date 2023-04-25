@@ -89,7 +89,7 @@ const MONTHS = [
     //Info on most recent (last) race
     const extractdate = new Date(extractAthlete.races[0].date);
     const day = extractdate.getUTCDate();
-    const month = extractdate.getMonth();
+    const month = MONTHS[extractdate.getMonth()];
     const year = extractdate.getFullYear();
 
     let timeAsArray = extractAthlete.races[0].time;
@@ -98,8 +98,9 @@ const MONTHS = [
     {
         total = total + timeAsArray[i];
     };
-    const hours = total / 60;
-    const minutes = total / hours / 60;
+
+    const hours = Math.floor(total / 60).toString();
+    const minutes = (total % 60).toString();
   
     list.innerHTML = `
       <dt>Athlete</dt>
@@ -112,12 +113,12 @@ const MONTHS = [
       <dd>${day} ${month} ${year}</dd>
   
       <dt>Total Time (Latest)</dt>
-      <dd>${hours}.${minutes}</dd>
+      <dd>${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}</dd>
     `;
 
     fragment.appendChild(list);
+    return fragment;
   }
 
-let {NM372, SV782} = data.response.data;
-document.querySelector('[data-athlete="NM372"]').appendChild(createHtml(NM372));
-//   document.querySelector(SV782).appendChild(createHtml(SV782));
+document.querySelector('[data-athlete="NM372"]').appendChild(createHtml('NM372'));
+document.querySelector('[data-athlete="SV782"]').appendChild(createHtml('SV782'));
