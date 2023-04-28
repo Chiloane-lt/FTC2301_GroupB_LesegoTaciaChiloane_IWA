@@ -64,7 +64,6 @@ const createData = () => {
                 value: isValid ? day : '',
             });
         };
-
         storage.push(value); // Save contents of value inside storage because value changes after every cycle.
     };
 
@@ -74,49 +73,65 @@ const createData = () => {
 };
 
 const addCell = (existing, classString, value) => {
-    const result = /* html */ `
+    const result = /* html */ 
+    `
         <td ${classString}>
             ${value}
         </td>
 
         ${existing}
     `
+    return result;
 };
 
 const createHtml = (data) => {
     let result = '';
 
     for (let x = 0; x < data.length; x++) {
+        
         let inner = "";
 
-        addCell(inner, 'table__cell table__cell_sidebar', 'Week ${week}');
+        /* data[x].days is NOT an array but an object. So I can only access it using Object.keys.
+                    * Also changed the order in which days appear to go from left to right. 
+                    */
 
-        for (let y = 0; y < data[x].length; y++) {
+        for (let y = (Object.keys(data[x].days).length - 1); y >= 0; y--) { 
 
-            console.log(data[x][y]);
+            // Check current date in calender.
+            let isToday = new Date().getDate() === data[x].days[y].value; 
+            
+            let isWeekend = data[x].days[y].dayOfWeek === 0 || data[x].days[y].dayOfWeek === 6; 
 
-            classString = 'table__cell'
-            isToday = new Date() === data[x][y]; // Check current date.
-            isWeekend = dayOfWeek === 0 && dayOfWeek === 6; // Check if Sunday (0) or Saturday (6).
-            isAlternate = (week % 2) === 0; // Check if week is even. Must edit to account that week index starts from 0.
+            let isAlternate = (data[x].week % 2) === 0; 
 
-            let classString = 'table__cell'; // This will be used as selector in CSS.
+            // These will be used as selectors inside the CSS.
+            let classString = 'class="table__cell'; 
 
             if (isToday) {
-                classString = `table__cell_today`
+                classString += ' table__cell_today';
             };
-            if (isWeekend) {
-                classString = 'table__cell_weekend'
-            };
-            if (isAlternate) {
-                classString = 'table__cell_alternate'
-            };
-            addCell(inner, classString, value);
-        }
 
-        result = `<tr>${inner}</tr>`
-    }
-}
+            if (isWeekend) {
+                classString += ' table__cell_weekend';
+            };
+            
+            if (isAlternate) {
+                classString += ' table__cell_alternate';
+            };
+            classString += `"`;
+           
+            inner = addCell(inner, classString, data[x].days[y].value);
+           console.log(classString)
+        };
+
+        inner = addCell(inner, 'class="table__cell table__cell_sidebar"', `Week ${data[x].week}`);
+
+console.log(result)
+        result = result + `<tr>${inner}</tr>`
+    };
+
+    return result;
+};
 
 // Only edit above
 
