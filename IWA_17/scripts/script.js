@@ -45,7 +45,6 @@ const createData = () => {
 
     let day = 0 - startDay;
 
-
     for (let weekIndex = 0; weekIndex <= weeks.length - 1; weekIndex++) {
         value = {
             week: weekIndex + 1,
@@ -66,7 +65,6 @@ const createData = () => {
         };
         storage.push(value); // Save contents of value inside storage because value changes after every cycle.
     };
-
     return storage;
     /* Must have return to use for later functions. Return is a nested array of six inner arrays. Each inner
      * array represents a week and it's days.*/
@@ -92,9 +90,9 @@ const createHtml = (data) => {
         let inner = "";
 
         /* data[x].days is NOT an array but an object. So I can only access it using Object.keys.
-                    * Also changed the order in which days appear to go from left to right. 
-                    */
-
+         * Also changed the order in which days appear to go from left to right. 
+         */
+        
         for (let y = (Object.keys(data[x].days).length - 1); y >= 0; y--) { 
 
             // Check current date in calender.
@@ -121,15 +119,12 @@ const createHtml = (data) => {
             classString += `"`;
            
             inner = addCell(inner, classString, data[x].days[y].value);
-           console.log(classString)
         };
 
         inner = addCell(inner, 'class="table__cell table__cell_sidebar"', `Week ${data[x].week}`);
 
-console.log(result)
         result = result + `<tr>${inner}</tr>`
     };
-
     return result;
 };
 
