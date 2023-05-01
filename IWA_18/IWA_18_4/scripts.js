@@ -28,7 +28,7 @@ const handleDragOver = (event) => {
     if (!column) return
     updateDragging({ over: column })
     updateDraggingHtml({ over: column })
-}
+};
 
 
 const handleDragStart = (event) => {}
@@ -51,10 +51,30 @@ const handleAddToggle = (event) => {
      } else if (target == html.add.cancel)
     {
         html.add.overlay.close();
+        html.add.form.reset();
     };
 };
 
-const handleAddSubmit = (event) => {}
+const handleAddSubmit = (event) => {
+    event.preventDefault();
+    const { target } = event;
+    
+    let data = {
+        title: null,
+        table: null,
+        column: COLUMNS[0],
+    }
+
+    if (target == html.add.form) {
+        data.title = html.add.title.value;
+        data.table = html.add.table.value;
+        html.add.overlay.close();
+        html.add.form.reset();   
+    }
+
+    let order = createOrderData(data);
+}
+
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {}
 const handleDelete = (event) => {}
@@ -79,6 +99,3 @@ for (const htmlColumn of Object.values(html.columns)) {
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver)
 }
-
-// console.log(html.other.help)
-// console.log(html.help.cancel)
