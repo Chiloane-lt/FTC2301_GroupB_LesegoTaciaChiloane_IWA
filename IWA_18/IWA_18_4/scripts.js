@@ -69,10 +69,12 @@ const handleAddSubmit = (event) => {
         data.title = html.add.title.value;
         data.table = html.add.table.value;
         html.add.overlay.close();
-        html.add.form.reset();   
+        html.add.form.reset();
+        const order = createOrderHtml(createOrderData(data));
+        html.columns.ordered.appendChild(order);   
     }
 
-    let order = createOrderData(data);
+    
 }
 
 const handleEditToggle = (event) => {}
