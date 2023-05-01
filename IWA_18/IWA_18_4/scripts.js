@@ -36,16 +36,24 @@ const handleDragEnd = (event) => {}
 
 const handleHelpToggle = (event) => {
     const { target } = event;
-
     if (target == html.other.help) {
         html.help.overlay.showModal();
     } 
-    else if (target == html.help.cancel){
-        html.help.overlay.close()
+    else if (target == html.help.cancel) {
+        html.help.overlay.close();
     }        
 };
 
-const handleAddToggle = (event) => {}
+const handleAddToggle = (event) => {
+    const { target } = event;
+     if (target == html.other.add) {
+        html.add.overlay.showModal();
+     } else if (target == html.add.cancel)
+    {
+        html.add.overlay.close();
+    };
+};
+
 const handleAddSubmit = (event) => {}
 const handleEditToggle = (event) => {}
 const handleEditSubmit = (event) => {}
