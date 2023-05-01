@@ -48,7 +48,7 @@ export const createOrderHtml = (order) => {
  *
  * @returns {HTMLElement}
  */
-const createTableOptionsHtml = () => {
+export const createTableOptionsHtml = () => {                           // Edited.
     const fragment = document.createDocumentFragment()
 
     for (const singleTable of TABLES) {
@@ -148,7 +148,6 @@ export const moveToColumn = (id, newColumn) => {
  * immediately started adding an order by pressing the enter or spacebar.
  */
 html.other.add.focus()
-
 
 html.add.table.appendChild(createTableOptionsHtml())
 html.edit.table.appendChild(createTableOptionsHtml())
