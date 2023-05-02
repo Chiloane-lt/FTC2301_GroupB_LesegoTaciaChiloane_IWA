@@ -36,7 +36,7 @@ export const createOrderHtml = (order) => {
         </dl>
     `
 
-    return element
+    return element;
 }
 
 /**
@@ -58,7 +58,7 @@ export const createTableOptionsHtml = () => {                           // Edite
         fragment.appendChild(option)
     }
 
-    return fragment
+    return fragment;
 }
 
 /**
