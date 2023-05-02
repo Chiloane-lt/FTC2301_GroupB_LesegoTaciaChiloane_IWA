@@ -30,9 +30,22 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 };
 
+// console.log(html.area)
+// console.log(html.columns)
+// console.log(html.other.grid)
+// console.log(html.other.order)
 
-const handleDragStart = (event) => {}
-const handleDragEnd = (event) => {}
+const handleDragStart = (event) => {
+    console.log('Start');
+}
+
+const handleDragEnd = (event) => {
+    const { target } = event;
+    console.log('End');
+    console.log(target);
+
+    //moveToColumn()
+}
 
 const handleHelpToggle = (event) => {
     const { target } = event;
@@ -72,12 +85,24 @@ const handleAddSubmit = (event) => {
         html.add.form.reset();
         const order = createOrderHtml(createOrderData(data));
         html.columns.ordered.appendChild(order);   
-    }
-
-    
+    }    
 }
 
-const handleEditToggle = (event) => {}
+const handleEditToggle = (event) => {
+    const { target } = event;
+ 
+    if (target == html.edit.cancel) {
+
+        html.edit.overlay.close();
+        console.log('You cancelled.')
+
+    } else if (target == html.edit.delete) {
+        console.log('You closed.')
+    } else {
+        html.edit.overlay.showModal();
+    }
+};
+
 const handleEditSubmit = (event) => {}
 const handleDelete = (event) => {}
 

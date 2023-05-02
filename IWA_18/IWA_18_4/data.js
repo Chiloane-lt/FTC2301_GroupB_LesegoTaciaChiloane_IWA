@@ -1,5 +1,3 @@
-import { html } from './view.js'
-
 /**
  * A pre-defined list of tables IDs to be used in the app. This can be
  * configured before the app is started, and allows the app to be used in
