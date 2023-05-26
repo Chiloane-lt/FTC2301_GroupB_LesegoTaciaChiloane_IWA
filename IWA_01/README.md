@@ -5,7 +5,7 @@
 - [Key Features:](#key-features)
 - [User Stories](#user-stories)
 - [Techonologies](#techonologies)
-- [Process Flow Diagram](#process-flow-diagram)
+- [Simplified Proces Flow](#simplified-proces-flow)
 
 ## Description
 
@@ -17,15 +17,7 @@ The Tally Counter App is a user-friendly and versatile tool designed to help you
 
 - Multiple Counters: The app supports multiple counters, enabling you to simultaneously track different items or activities. Each counter can be labeled or customized according to your specific needs, making it easy to differentiate between counts.
 
-- Count History: The app maintains a comprehensive history of your counts, allowing you to review and analyze your data later. You can access previous counts, view trends, and compare results over time, providing valuable insights and tracking progress.
-
 - Customizable Settings: The app offers customization options to adapt to your preferences. You can personalize the counter display, choose different color themes, adjust sound settings, and configure other features to enhance your counting experience.
-
-- Data Export and Sharing: The app allows you to export your count data in various formats, such as CSV or Excel, facilitating further analysis or integration with other applications. You can also share your counts directly from the app via email, messaging, or social media platforms.
-
-- Offline Functionality: The app works offline, ensuring you can continue tallying even without an internet connection. This feature makes it suitable for use in remote locations or areas with limited connectivity.
-
-- Security and Privacy: The app prioritizes the security and privacy of your data. It does not collect personal information and provides options to secure your counts with a passcode or biometric authentication, ensuring your information remains confidential.
 
 The Tally Counter App is a versatile tool that caters to a wide range of users, from teachers and researchers to fitness enthusiasts and event organizers. Its simplicity, flexibility, and array of features make it an indispensable companion for anyone needing to keep accurate counts in their daily activities. Download the Tally Counter App today and streamline your tallying process with ease.
 
@@ -57,7 +49,7 @@ The Tally Counter App is a versatile tool that caters to a wide range of users, 
 - Basic JavaScript, CSS & HTML skills
 - A web browser like firefox
 
-## Process Flow Diagram
+## Simplified Proces Flow
 
 ```mermaid
 graph TD
