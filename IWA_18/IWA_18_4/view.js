@@ -13,9 +13,9 @@ export const createOrderHtml = (order) => {
     const { id, title, table, created } = order
 
     const element = document.createElement('div')
-    element.className = 'order'
-    element.draggable = true
-    element.dataset.id = id
+    element.className = 'order';
+    element.draggable = true;
+    element.dataset.id = id;
 
     const hours = created.getHours().toString().padStart(2, '0')
     const minutes = created.getMinutes().toString().padStart(2, '0')

@@ -82,7 +82,7 @@ const handleAddSubmit = (event) => {
     }
 
     if (target == html.add.form) {
-        
+
         data.title = html.add.title.value;
         data.table = html.add.table.value;
         html.add.overlay.close();
@@ -98,7 +98,7 @@ const handleAddSubmit = (event) => {
 };
 
 const handleEditToggle = (event) => {
-    const { target } = event;
+    const { target, srcElement } = event;
  
     if (target == html.edit.cancel) {
 
@@ -107,13 +107,27 @@ const handleEditToggle = (event) => {
     } else if (target == html.edit.delete) {
         //Place delete function here.
     } else {
+
         html.edit.overlay.showModal();
+
+        if (target != html.columns.ordered.querySelector('.order')) {
+          console.log("This be parent id: " + event.target.parentNode.dataset.id);   
+        }
+
+        let v = html.columns.ordered;
+        console.log(v)
     }
 
     // Stop propagation!
 };
 
-const handleEditSubmit = (event) => {}
+const handleEditSubmit = (event) => {
+
+    // Find id to compare to.
+    // Find & extract order using id from ORDERS_GLOBAL.
+    // Make changes to order.
+    //Apply changes to html.
+}
 const handleDelete = (event) => {}
 
 html.add.cancel.addEventListener('click', handleAddToggle)
