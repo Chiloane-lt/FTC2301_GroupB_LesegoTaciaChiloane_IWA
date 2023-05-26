@@ -1,6 +1,8 @@
 import { createOrderHtml, createTableOptionsHtml, html, updateDraggingHtml, moveToColumn } from './view.js'
 import { TABLES, COLUMNS, state, createOrderData, updateDragging } from './data.js'
 
+let ORDERS_GLOBAL = [];
+
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -49,6 +51,7 @@ const handleDragEnd = (event) => {
 
 const handleHelpToggle = (event) => {
     const { target } = event;
+    
     if (target == html.other.help) {
         html.help.overlay.showModal();
     } 
@@ -79,31 +82,52 @@ const handleAddSubmit = (event) => {
     }
 
     if (target == html.add.form) {
+
         data.title = html.add.title.value;
         data.table = html.add.table.value;
         html.add.overlay.close();
         html.add.form.reset();
-        const order = createOrderHtml(createOrderData(data));
-        html.columns.ordered.appendChild(order);   
-    }    
-}
+
+        const order = createOrderData(data);
+        const orderHTML = createOrderHtml(order);
+        html.columns.ordered.appendChild(orderHTML); 
+
+        ORDERS_GLOBAL.push({[order.id] : order});
+    } 
+
+};
 
 const handleEditToggle = (event) => {
-    const { target } = event;
+    const { target, srcElement } = event;
  
     if (target == html.edit.cancel) {
 
         html.edit.overlay.close();
-        console.log('You cancelled.')
 
     } else if (target == html.edit.delete) {
-        console.log('You closed.')
+        //Place delete function here.
     } else {
+
         html.edit.overlay.showModal();
+
+        if (target != html.columns.ordered.querySelector('.order')) {
+          console.log("This be parent id: " + event.target.parentNode.dataset.id);   
+        }
+
+        let v = html.columns.ordered;
+        console.log(v)
     }
+
+    // Stop propagation!
 };
 
-const handleEditSubmit = (event) => {}
+const handleEditSubmit = (event) => {
+
+    // Find id to compare to.
+    // Find & extract order using id from ORDERS_GLOBAL.
+    // Make changes to order.
+    //Apply changes to html.
+}
 const handleDelete = (event) => {}
 
 html.add.cancel.addEventListener('click', handleAddToggle)
@@ -126,3 +150,5 @@ for (const htmlColumn of Object.values(html.columns)) {
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver)
 }
+// const it = html.columns.ordered.querySelector('.');
+//.getAttribute('data-id');

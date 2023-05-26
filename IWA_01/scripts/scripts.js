@@ -1,3 +1,5 @@
+// @ts-check
+
 const MAX_NUMBER = 15
 const MIN_NUMBER = -5
 
