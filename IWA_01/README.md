@@ -60,9 +60,9 @@ The Tally Counter App is a versatile tool that caters to a wide range of users, 
 ## Process Flow Diagram
 
 ```
-    memrmaid
+    mermaid
 graph TD
-        A[Start] --> B[Initialize Constants]
+    A[Start] --> B[Initialize Constants]
     B --> C[Initialize Variables]
     C --> D[Attach Event Listeners]
     D --> E{Is Subtract Clicked?}
